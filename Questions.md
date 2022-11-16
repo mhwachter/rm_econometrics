@@ -17,4 +17,4 @@
 - Replicate random forest results?
 - Find the real data?
 - Code from CompStat?
-- Data generating process for simulation study?
+- Data generating process for simulation study? How many different should we consider?
