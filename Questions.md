@@ -28,6 +28,9 @@ Connection between theory and application part. Assumptions for Lasso estimation
 ---
 ## Allocation of Topics
 - Cristian: Theory
+    - What happens under different penalties?
+    - How should we defined the tunning parameter (lambda)?
+    - How do glmnet package manage deliver results for OLS under          high-dimensionality ?
 - Marcel: Simulation
 ## To Do:
 - Run Code for Lasso
