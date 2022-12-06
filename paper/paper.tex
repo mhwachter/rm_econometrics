@@ -45,6 +45,15 @@
 
 %Tables
 \usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
 
 %TikZ
 \usepackage{tikz}
