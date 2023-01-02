@@ -30,6 +30,7 @@ Connection between theory and application part. Assumptions for Lasso estimation
 - Cristian: Theory
     - Should I try a simulation with normally distributed regressors or uniformly distributed is enough?
     - What happens under different penalties?
+        - According to literature prediction does not improve.
     - How should we defined the tunning parameter (lambda)?
     - How do glmnet package manage deliver results for OLS under          high-dimensionality ?
 - Marcel: Simulation
