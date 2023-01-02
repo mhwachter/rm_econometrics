@@ -36,7 +36,7 @@ Connection between theory and application part. Assumptions for Lasso estimation
 - Marcel: Simulation
 ## To Do:
 - Run Code for Lasso
-- Start with the presentation
+- Start with the presentation (do we have a template?)
     - Motivation: Why Lasso in Labor Economics ? -> Use Angrist 2022 as example (Cristian)
     - Theory (Explanation + Formulas + Graphs)
     - Simulation (Marcel)
