@@ -41,3 +41,8 @@ Connection between theory and application part. Assumptions for Lasso estimation
     - Theory (Explanation + Formulas + Graphs)
     - Simulation (Marcel)
 
+## TO DO UNTIL (08.01)
+- Cristian: Finish simulations for penalty selection
+- Group: At least a draft of the presentation to discuss with the Professor
+- Marcel: Upload codes and visualize the results
+
