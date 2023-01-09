@@ -66,7 +66,7 @@
 \vspace{4mm}
 \begin{itemize}
     \item Angrist (2022): Selecting the correct controls from a dictionary allows to make valid inference.
-    \item **Add text here**
+    \item Attach here regression table 1 from Angrist (2022)
 \end{itemize}
 
 \end{frame}
@@ -104,6 +104,11 @@ Formally,
 	\hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^k x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^k |\beta_j|\right)\right\}
 	\tag{3}
 	\]
+
+\begin{flushleft}
+Note: Lasso is contructed upon the assumption of \textbf{approximate sparsity} that consists of only a small subset of covariates, $s^2<<n$ taking non-zero values, where $s$ represents
+a sparse vector explainin the outcome and n the number of observations.
+\end{flushleft}
 \end{frame}
 
 
