@@ -84,38 +84,62 @@
 It's estimator looks as follows
 \end{flushleft}
 \[
-\hat{\boldsymbol{\beta}}^{\text{OLS}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2
+\hat{\boldsymbol{\beta}}^{\text{OLS}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^k x_{i j}\beta_j)^2
     \tag{2}
 \]
 \begin{flushleft}
-where $\mathbf{x}_i=(x_{i1}, ..., x_{ip})$ and $p$ is the number of regressors.
+where $\mathbf{x}_i=(x_{i1}, ..., x_{ik})$ and $k$ is the number of regressors.
 \end{flushleft}
 \end{frame}
 
-\begin{frame}{Theory: The Lasso Estimator}
 
+\begin{frame}{Theory: Lasso}
 \begin{flushleft}
-Now consider a LASSO estimator as 
-\end{flushleft}
+LASSO expands the OLS minimand in equation (2) by adding a regularization term  
+that favors smaller coefficients and lower-dimensional models over an unrestricted OLS fit.
 
-	\[
-	\hat{\boldsymbol{\beta}}^{\text{LASSO}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2
-		\tag{3}
-	\]
-\begin{flushleft}
-	subject to 
+Formally, 
 \end{flushleft}
 	\[
-    \sum_{j=1}^{p}\left|\beta_{j}\right|\leq t
-    \tag{4}
+	\hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^k x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^k |\beta_j|\right)\right\}
+	\tag{3}
 	\]
-\begin{flushleft}
-	combining (3) and (4) we obtain
-\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Theory: The penalty term $\lambda$}
+	\begin{flushleft}
+	In contemporary Machine Learning the penalty term is chosen by Cross-Validation. However, 
+	Belloni et al. (2012,2014b) proposes an alternative data-driven procedure as follows:
 	\[
-	\hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^p |\beta_j|\right)\right\}
-	\tag{5}
+	\lambda=2c \sqrt{n} \phi^{-1} (\frac{1-\gamma}{2p})
+		\tag{4}
 	\]
+	where $c>1$ is a constant, $(1-\gamma)$ a confidence interval, $k$ the number of regressors and $\phi$ the cummulative standard normal distribution
+	accoring to Belloni et al (2014b).
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Theory: Testing Lasso features}
+	\begin{itemize}
+		\item Attach here the following simulation results: Approaching high dimensionality
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Theory: Testing Lasso features}
+	\begin{itemize}
+		\item Attach here the following results: Increasing sparsity
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Theory: Testing Lasso features}
+	\begin{itemize}
+		\item Attach here the following results: High-dimensional scenario Lasso vs Rigorous Lasso
+	\end{itemize}
 \end{frame}
 
 
