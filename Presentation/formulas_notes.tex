@@ -1,0 +1,42 @@
+- Standard linear regression formula: 
+\begin{equation}
+
+    y_i=\boldsymbol{\beta_0} +\mathbf{x}_i^\prime \boldsymbol{\beta}+\epsilon_i, \quad i = 1, \ldots, n,
+    \tag{1}
+    \end{equation}
+
+- Lasso estimator formula:
+\begin{equation}
+    \hat{\boldsymbol{\beta}}^{\text{LASSO}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2
+    \tag{2}
+    \end{equation} 
+    
+    subject to 
+    
+    \begin{equation}
+    \sum_{j=1}^{p}\left|\beta_{j}\right|\leq t
+    \tag{3}
+    \end{equation}
+    
+- Lasso estimator with penalty: 
+\begin{equation}
+    \begin{aligned}
+    \hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^p |\beta_j|\right)\right\}.\\
+    \end{aligned}
+    \tag{4}
+    \end{equation}
+
+- Data-driven penalty term: 
+\begin{equation}
+    \lambda=2c \sqrt{n} \phi^{-1} (\frac{1-\gamma}{2p})
+    \tag{6}
+    \end{equation}
+
+- Lasso estimator with penalty and loadings: 
+\begin{equation}
+    \begin{aligned}
+    \hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^p |\beta_j|\eta_j\right)\right\}.\\
+    \end{aligned}
+    \tag{5}
+    \end{equation}
+
