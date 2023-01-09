@@ -73,25 +73,50 @@
 
 
 \begin{frame}{Theory}
-\begin{columns}
-
-\column{0.4\textwidth}
-\begin{itemize}
-\item Consider a standard linear regression model . 
-\end{itemize}
-
-\column{0.6\textwidth}
-
-\end{columns}
-
-
+\begin{flushleft}
+\item Consider a standard linear regression model. 
+\end{flushleft}
 \[
     y_i=\boldsymbol{\beta_0} +\mathbf{x}_i^\prime \boldsymbol{\beta}+\epsilon_i, \quad i = 1, \ldots, n,
     \tag{1}
 \]
-
+\begin{flushleft}
+It's estimator looks as follows
+\end{flushleft}
+\[
+\hat{\boldsymbol{\beta}}^{\text{OLS}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2
+    \tag{2}
+\]
+\begin{flushleft}
+where $\mathbf{x}_i=(x_{i1}, ..., x_{ip})$ and $p$ is the number of regressors.
+\end{flushleft}
 \end{frame}
 
+\begin{frame}{Theory: The Lasso Estimator}
+
+\begin{flushleft}
+Now consider a LASSO estimator as 
+\end{flushleft}
+
+	\[
+	\hat{\boldsymbol{\beta}}^{\text{LASSO}}=\underset{\boldsymbol{\beta}}{\arg \min}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2
+		\tag{3}
+	\]
+\begin{flushleft}
+	subject to 
+\end{flushleft}
+	\[
+    \sum_{j=1}^{p}\left|\beta_{j}\right|\leq t
+    \tag{4}
+	\]
+\begin{flushleft}
+	combining (3) and (4) we obtain
+\end{flushleft}
+	\[
+	\hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^p x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^p |\beta_j|\right)\right\}
+	\tag{5}
+	\]
+\end{frame}
 
 
 \begin{frame}{Replication Study}
