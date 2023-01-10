@@ -101,7 +101,7 @@ that favors smaller coefficients and lower-dimensional models over an unrestrict
 Formally, 
 \end{flushleft}
 	\[
-	\hat{\boldsymbol{\beta}}^{\text{LASSO}} &=\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^k x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^k |\beta_j|\right)\right\}
+	\hat{\boldsymbol{\beta}}^{\text{LASSO}} =\underset{\boldsymbol{\beta}}{\arg \min}\left\{\frac{1}{2}\sum_{i=1}^N (y_i-\beta_0-\sum_{j=1}^k x_{i j}\beta_j)^2 +\lambda \left(\sum_{j=1}^k |\beta_j|\right)\right\}
 	\tag{3}
 	\]
 
@@ -157,6 +157,17 @@ a sparse vector explainin the outcome and n the number of observations.
 \end{itemize}
 
 \includegraphics[width=0.4\textwidth]{/Users/marcel/Uni/MSc/3rd/RM_Econometrics/project/rm_econometrics/Presentation/Table 1 Angrist (2022).png}
+\end{frame}
+
+\begin{frame}{Theory: Post Double Selection}
+Consider the simple linear model
+\[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
+\[D_i = \delta X_i + \upsilon_i\]
+with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\) 
+\end{frame}
+
+\begin{frame}{Simulation: Inference with Selection among Many Controls}
+	
 \end{frame}
 
 
