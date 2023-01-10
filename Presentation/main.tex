@@ -159,11 +159,22 @@ a sparse vector explainin the outcome and n the number of observations.
 \includegraphics[width=0.4\textwidth]{/Users/marcel/Uni/MSc/3rd/RM_Econometrics/project/rm_econometrics/Presentation/Table 1 Angrist (2022).png}
 \end{frame}
 
+\begin{frame}{Application of Lasso in Labor Economics}
+\begin{itemize}
+	\item Empirical labor economists are often interested in causal inference and the estimation of treatment effects.
+	\item High-dimensional data, i.e. the number of variables is close to or larger than the number of observations.
+	\item Data itself can be high-dimensional in nature.
+	\item Even if the number of variables is not large, the exact specification of the variables is not known. Interactions or transformations can increase the number of variables significantly.
+\end{itemize}	
+\end{frame}
+
 \begin{frame}{Theory: Post Double Selection}
 Consider the simple linear model
 \[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
 \[D_i = \delta X_i + \upsilon_i\]
-with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\) 
+with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\).
+
+The 
 \end{frame}
 
 \begin{frame}{Simulation: Inference with Selection among Many Controls}
