@@ -1,20 +1,6 @@
+
 \documentclass{beamer}
-%Encoding
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
-%Language
-\usepackage[english]{babel}
-
-%Math
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{amsthm}
-
-%Font
-\usepackage{erewhon}
-\usepackage[utopia,smallerops]{newtxmath}
-
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{xcolor}
@@ -55,7 +41,6 @@
 \item Motivation
 \item Theory
 \item Replication Study
-\item Simulation
 \item Conclusion
 \end{itemize}
 \end{frame}
@@ -180,30 +165,19 @@ a sparse vector explainin the outcome and n the number of observations.
 	\item High-dimensional data, i.e. the number of variables is close to or larger than the number of observations.
 	\item Data itself can be high-dimensional in nature.
 	\item Even if the number of variables is not large, the exact specification of the variables is not known. Interactions or transformations can increase the number of variables significantly.
-	\item Machine learning methods like Lasso can help to deal with high-dimensional data.
 \end{itemize}	
 \end{frame}
 
 \begin{frame}{Theory: Post Double Selection}
 Consider the simple linear model
-\begin{equation}
-	Y_i = \alpha D_i + \beta X_i + \varepsilon_i
-\end{equation}
-\begin{equation}
-	D_i = \delta X_i + \upsilon_i
-\end{equation}
+\[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
+\[D_i = \delta X_i + \upsilon_i\]
 with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\).
 
-Post double selection consists of three simple steps:
-\begin{enumerate}
-	\item 
-\end{enumerate}
+The 
 \end{frame}
 
-
 \begin{frame}{Simulation: Inference with Selection among Many Controls}
-The number of observations is denoted by \(n\), the number of covariates by \(p\), and the sparsity parameter by \(k\). The sparsity parameter specifies how many covariates are non-zero. Thus we have \(\beta_j = \delta_j = c * 1\{j \leq k\}\) for \(j = 1,\ldots,p\). The coefficient \(c\) can be adjusted to correspond to a given \(R^2\). 
-
 	
 \end{frame}
 
