@@ -37,7 +37,7 @@
 \begin{itemize}
     
 
-\item Research Question
+\item Main idea of Angrist (2022)
 \item Motivation
 \item Theory
 \item Replication Study
@@ -46,11 +46,9 @@
 \end{frame}
 
 
-\begin{frame} {Research Question + Main idea of Angrist (2022)}
+\begin{frame} {Main idea of Angrist (2022)}
 \begin{itemize}
-
 \item  Angrist (2022) studies utility of machine learning (ML) algorithms for regression-based causal inference using lasso to select control variables for estimates of college characteristics' wage effect.
-\item **Add text here**.
 \end{itemize}
 
 \end{frame}
@@ -61,14 +59,10 @@
 
 
 \begin{frame}{Motivation}
-
-\flushleft \textbf{**Add text here**}
-\vspace{4mm}
 \begin{itemize}
     \item Angrist (2022): Selecting the correct controls from a dictionary allows to make valid inference.
-    \item Attach here regression table 1 from Angrist (2022)
 \end{itemize}
-
+\includegraphics[width=0.4\textwidth]{Table 1 Angrist (2022).png}
 \end{frame}
 
 
@@ -127,8 +121,13 @@ a sparse vector explainin the outcome and n the number of observations.
 
 
 \begin{frame}{Theory: Testing Lasso features}
+\begin{flushleft}
+This section shows various simulations that intend to test the approximate sparsity assumption of LASSO.
+\end{flushleft}
 	\begin{itemize}
-		\item Attach here the following simulation results: Approaching high dimensionality
+		\item The data generating process is as follows:
+		\[Y_i = \beta X_i + \varepsilon_i\]
+		with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\beta  {\sim}  \mathcal{U}(0.1,0.5)\) 
 	\end{itemize}
 \end{frame}
 
