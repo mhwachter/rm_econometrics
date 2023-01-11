@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[serif,professionalfont]{beamer}
 
 %Encoding
 \usepackage[T1]{fontenc}
@@ -19,9 +19,14 @@
 %Graphics
 \usepackage{graphicx}
 
+%Tables
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
 \usepackage{wrapfig}
 \usepackage{xcolor}
-\usepackage{booktabs}
+
 
 
 
@@ -30,16 +35,16 @@
 
 \usetheme{Madrid}
 
-\AtBeginSection[]{
-	\begin{frame}
-		\vfill
-		\centering
-		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-			\usebeamerfont{title}\insertsectionhead\par%
-		\end{beamercolorbox}
-		\vfill
-	\end{frame}
-}
+% \AtBeginSection[]{
+% 	\begin{frame}
+% 		\vfill
+% 		\centering
+% 		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+% 			\usebeamerfont{title}\insertsectionhead\par%
+% 		\end{beamercolorbox}
+% 		\vfill
+% 	\end{frame}
+% }
 
 \title{Replication Study: Machine Labor (Angrist, 2022)}
 \subtitle {Research Module Econometrics}
@@ -118,7 +123,7 @@ Formally,
 	\]
 
 \begin{flushleft}
-Note: Lasso is contructed upon the assumption of \textbf{approximate sparsity} that consists of only a small subset of covariates, $s^2<<n$ taking non-zero values, where $s$ represents
+Note: Lasso is contructed upon the assumption of \textbf{approximate sparsity} that consists of only a small subset of control variables, $s^2<<n$ taking non-zero values, where $s$ represents
 a sparse vector explainin the outcome and n the number of observations.
 \end{flushleft}
 \end{frame}
@@ -185,19 +190,40 @@ This section shows various simulations that intend to test the approximate spars
 \end{itemize}	
 \end{frame}
 
-\begin{frame}{Theory: Post Double Selection}
-Consider the simple linear model
-\[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
-\[D_i = \delta X_i + \upsilon_i\]
-with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\).
+\begin{frame}{Simulation: Inference with Selection among Many Controls}
+	Consider the simple linear model
+	\[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
+	\[D_i = \delta X_i + \upsilon_i\]
+	where \(Y_i\) denotes the outcome, \(D_i\) a scalar treatment and \(X_i\) a vector of control variables. Further, \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\). 	
 \end{frame}
 
 \begin{frame}{Simulation: Inference with Selection among Many Controls}
-	The number of observations is denoted by \(n\), the number of covariates by \(p\), and the sparsity parameter by \(k\). The sparsity parameter specifies how many covariates are non-zero. Thus we have \(\beta_j = \delta_j = c * 1\{j \leq k\}\) for \(j = 1,\ldots,p\). The coefficient \(c\) can be adjusted to correspond to a given \(R^2\). 	
+	The number of observations is denoted by \(n\), the number of control variables by \(p\), and the sparsity parameter by \(k\). The sparsity parameter specifies how many control variables are non-zero. Thus we have \(\beta_j = \delta_j = c * 1\{j \leq k\}\) for \(j = 1,\ldots,p\). The coefficient \(c\) can be adjusted to correspond to a given \(R^2\). 	
 \end{frame}
 
+\begin{frame}{Theory: Post Double Selection}
+	Consists of three main steps:
+	\begin{enumerate}
+		\item Lasso Regression of \(D_i\) on \(X_i\) to select relevant control variables.
+		\item Lasso Regression of \(Y_i\) on \(X_i\) to select relevant control variables.
+		\item OLS Regression of \(Y_i\) on \(D_i\) and the union of control variables selected by steps 1 and 2.
+	\end{enumerate}
+	\end{frame}
+
 \begin{frame}{Simulation: Designs}
-	
+\begin{flushleft}
+	We show results for \(R^2 \in \{0.1,0.5,0.8\}\), \(p \in \{200,300,400\}\), \(k = 5\) and \(n = 500\).
+
+To compare the results of Lasso we also report results for two OLS regressions: One with all control variables and the other one with only the relevant control variables. Thus, there are 27 different designs. All the results are based on 1000 repetitions.
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Simulation: Results}
+	\includegraphics[width=0.95\textwidth]{../code/Simulation/te_density.pdf}	
+\end{frame}
+
+\begin{frame}{Simulation: Results}
+	\includegraphics[width=0.95\textwidth]{../code/Simulation/te_bw.pdf}	
 \end{frame}
 
 \begin{frame} {Conclusions}
