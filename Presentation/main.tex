@@ -1,9 +1,27 @@
-
 \documentclass{beamer}
+
+%Encoding
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+
+%Language
+\usepackage[english]{babel}
+
+%Math
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+%Font
+\usepackage{erewhon}
+\usepackage[utopia,smallerops]{newtxmath}
+
+%Graphics
 \usepackage{graphicx}
+
 \usepackage{wrapfig}
 \usepackage{xcolor}
+\usepackage{booktabs}
 
 
 
@@ -172,15 +190,15 @@ Consider the simple linear model
 \[Y_i = \alpha D_i + \beta X_i + \varepsilon_i\]
 \[D_i = \delta X_i + \upsilon_i\]
 with \(X_i \stackrel{iid}{\sim} \mathcal{N}(0_p,I_p)\), \(\varepsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\), and \(\upsilon_i \stackrel{iid}{\sim} \mathcal{N}(0,1)\).
-
-The 
 \end{frame}
 
 \begin{frame}{Simulation: Inference with Selection among Many Controls}
 	The number of observations is denoted by \(n\), the number of covariates by \(p\), and the sparsity parameter by \(k\). The sparsity parameter specifies how many covariates are non-zero. Thus we have \(\beta_j = \delta_j = c * 1\{j \leq k\}\) for \(j = 1,\ldots,p\). The coefficient \(c\) can be adjusted to correspond to a given \(R^2\). 	
 \end{frame}
 
-
+\begin{frame}{Simulation: Designs}
+	
+\end{frame}
 
 \begin{frame} {Conclusions}
 \begin{itemize}
